@@ -1,1 +1,144 @@
 
+//ch 코드 11-3
+//#include "opencv2/opencv.hpp"
+//#include <iostream>
+//using namespace cv;
+//using namespace std;
+//int main(void)
+//{
+//	Mat src = imread("card.bmp", IMREAD_GRAYSCALE);
+//	if (src.empty()) { cerr << "Image load failed!" << endl; return -1; }
+//	Mat bin;
+//	threshold(src, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+//	Mat dst1, dst2;
+//	erode(bin, dst1, Mat()); //3x3 구조요소 사용
+//	dilate(bin, dst2, Mat()); //3x3 구조요소 사용
+//	imshow("src", src);
+//	imshow("bin", bin);
+//	imshow("erode", dst1);
+//	imshow("dilate", dst2);
+//	waitKey();
+//	destroyAllWindows();
+//	return 0;
+//}
+//code 11-4
+//#include "opencv2/opencv.hpp"
+//#include <iostream>
+//using namespace cv;
+//using namespace std;
+//int main(void)
+//{
+//	Mat src = imread("card.bmp", IMREAD_GRAYSCALE);
+//	if (src.empty()) { cerr << "Image load failed!" << endl; return -1; }
+//	Mat bin;
+//	threshold(src, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+//	Mat dst1, dst2;
+//	morphologyEx(bin, dst1, MORPH_OPEN, Mat()); //3x3 구조요소 사용
+//	morphologyEx(bin, dst2, MORPH_CLOSE, Mat()); //3x3 구조요소 사용
+//	imshow("src", src);
+//	imshow("bin", bin);
+//	imshow("opening", dst1);
+//	imshow("closing", dst2);
+//	waitKey();
+//	destroyAllWindows();
+//	return 0;
+//}
+
+//실습과제 1
+
+//#include<opencv2/opencv.hpp>
+//#include<iostream>
+//using namespace std;
+//using namespace cv;
+//
+//int main(void)
+//{
+//	Mat rect, cross, ellipse;
+//	rect = getStructuringElement(MORPH_RECT, Size(3, 3));
+//	cross = getStructuringElement(MORPH_CROSS, Size(3, 3));
+//	ellipse = getStructuringElement(MORPH_ELLIPSE, Size(5, 3));
+//	cout << "MORPH_RECT" << endl << rect << endl;
+//	cout << "MORPH_CROSS" << endl << cross << endl;
+//	cout << "MORPH_ELLIPSE" << endl << ellipse << endl;
+//
+//	return 0;
+//}
+
+//실습과제2
+
+//#include "opencv2/opencv.hpp"
+//#include <iostream>
+//using namespace cv;
+//using namespace std;
+//int main(void)
+//{
+//	Mat src = imread("letterj.png", IMREAD_GRAYSCALE);
+//	if (src.empty()) { cerr << "Image load failed!" << endl; return -1; }
+//	Mat bin;
+//	threshold(src, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+//	Mat dst, dst2;
+//	morphologyEx(bin, dst, MORPH_OPEN, Mat());
+//	morphologyEx(dst, dst2, MORPH_CLOSE, Mat());
+//	imshow("src", src);
+//	imshow("bin", bin);
+//	imshow("erode", dst);
+//	imshow("end", dst2);
+//	
+//	waitKey();
+//	destroyAllWindows();
+//	return 0;
+//}
+
+//실습과제3
+
+//#include "opencv2/opencv.hpp"
+//#include <iostream>
+//using namespace cv;
+//using namespace std;
+//
+//int main(void)
+//{
+//	Mat src = imread("letterj2.png", IMREAD_GRAYSCALE);
+//	if (src.empty()) { cerr << "Image load failed!" << endl; return -1; }
+//	Mat bin;
+//	threshold(src, bin, 0, 255, THRESH_BINARY | THRESH_OTSU);
+//	Mat dst;
+//	Mat dst2, dst3;
+//	morphologyEx(bin, dst, MORPH_GRADIENT, Mat());
+//
+//
+//	imshow("bin", bin);
+//	imshow("dst", dst);
+//
+//	waitKey();
+//	destroyAllWindows();
+//	return 0;
+//}
+
+//실습과제4
+
+#include<iostream>
+#include<opencv2/opencv.hpp>
+
+using namespace std;
+using namespace cv;
+
+int main(void)
+{
+	Mat src = imread("car.png", IMREAD_GRAYSCALE);
+	if (src.empty()) { cerr << "Image load failed!" << endl; return -1; }
+	Mat binsobel, dst, dst2, dst3;
+	blur(src, binsobel, Size(5, 5));
+	Sobel(binsobel, dst, CV_8UC1, 1, 0);
+	threshold(dst, dst2, 128, 250, THRESH_BINARY);
+	morphologyEx(dst2, dst3, MORPH_CLOSE, Mat(5, 32, CV_8UC1));
+
+	imshow("image", src);
+	imshow("소벨", dst);
+	imshow("이진화", dst2);
+	imshow("닫기연산", dst3);
+	waitKey();
+	destroyAllWindows();
+	return 0;
+	
+}
