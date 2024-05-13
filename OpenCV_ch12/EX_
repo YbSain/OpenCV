@@ -1,0 +1,46 @@
+//CODE 12-1 레이블링예제
+//#include <iostream>
+//using namespace std;
+//#include "opencv2/opencv.hpp"
+//using namespace cv;
+//int main() {
+//	uchar data[] = {
+//	0, 0, 1, 1, 0, 0, 0, 0,
+//	1, 1, 1, 1, 0, 0, 1, 0,
+//	1, 1, 1, 1, 0, 0, 0, 0,
+//	0, 0, 0, 0, 0, 1, 1, 0,
+//	0, 0, 0, 1, 1, 1, 1, 0,
+//	0, 0, 0, 1, 0, 0, 1, 0,
+//	0, 0, 1, 1, 1, 1, 1, 0,
+//	0, 0, 0, 0, 0, 0, 0, 0,
+//	};
+//	Mat src = Mat(8, 8, CV_8UC1, data) * 255;
+//	Mat labels;
+//	int cnt = connectedComponents(src, labels);
+//	cout << "src:\n" << src << endl;
+//	cout << "labels:\n" << labels << endl;
+//	cout << "number of labels: " << cnt << endl;
+//	return 0;
+//}
+
+//예제: 통계정보 참조하기
+//#include <iostream>
+//using namespace std;
+//#include "opencv2/opencv.hpp"
+//using namespace cv;
+//int main()
+//{
+//	Mat src = imread("labelex.png", IMREAD_GRAYSCALE);
+//	if (src.empty()) { cerr << "Image load failed!" << endl; return -1; }
+//	Mat bin;
+//	threshold(src, bin, 0, 255, THRESH_BINARY_INV | THRESH_OTSU);
+//	Mat labels, stats, centroids;
+//	int cnt = connectedComponentsWithStats(bin, labels, stats, centroids);
+//	for (int j = 0; j < stats.rows; j++)
+//		cout << j << "번객체:" << "(x,y):" << setw(5) << stats.at<int>(j, 0)
+//		<< setw(5) << stats.at<int>(j, 1) << endl;
+//	imshow("src", src);
+//	imshow("dst", bin);
+//	return 0;
+//}
+
