@@ -1,5 +1,5 @@
+//실습과제 1번
 
-//코드 12-2 바운딩박스
 #include <iostream>
 using namespace std;
 #include "opencv2/opencv.hpp"
