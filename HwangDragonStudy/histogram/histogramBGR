@@ -1,0 +1,56 @@
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+using namespace std;
+using namespace cv;
+
+Mat calcGrayHist(const Mat& img);
+Mat getGrayHistImage(const Mat& hist);
+int main(void)
+{
+    Mat img = imread("cat.jpg");
+    if (img.empty()) { cerr << "Image load failed!" << endl; return-1; }
+    imshow("img", img);
+
+    Mat bgr[3];
+    split(img, bgr);
+    Mat histb = calcGrayHist(bgr[0]);
+    Mat histg = calcGrayHist(bgr[1]);
+    Mat histr = calcGrayHist(bgr[2]);
+    Mat histb_img = getGrayHistImage(histb);
+    Mat histg_img = getGrayHistImage(histg);
+    Mat histr_img = getGrayHistImage(histr);
+    imshow("b hist", histb_img);
+    imshow("g hist", histg_img);
+    imshow("r hist", histr_img);
+    waitKey();
+    return 0;
+}
+
+Mat getGrayHistImage(const Mat& hist)
+{
+    CV_Assert(hist.type() == CV_32FC1);
+    CV_Assert(hist.size() == Size(1, 256));
+    double histMax;
+    minMaxLoc(hist, 0, &histMax);
+    Mat imgHist(100, 256, CV_8UC1, Scalar(255));
+    for (int i = 0; i < 256; i++) {
+        line(imgHist,
+            Point(i, 100),
+            Point(i, 100 - cvRound(hist.at<float>(i, 0) * 100 / histMax)),
+            Scalar(0));
+    }
+    return imgHist;
+}
+Mat calcGrayHist(const Mat& img)
+{
+    CV_Assert(img.type() == CV_8UC1);
+    Mat hist;
+    int channels[] = { 0 };
+    int dims = 1;
+    const int histSize[] = { 256 };
+    float graylevel[] = { 0, 256 };
+    const float* ranges[] = { graylevel };
+    calcHist(&img, 1, channels, noArray(), hist, dims, histSize, ranges);
+    return hist;
+}
