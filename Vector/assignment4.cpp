@@ -22,7 +22,7 @@ int main(void)
 		}
 		positive.push_back(tmp);
 	}
-	cout << "Positive Vector" << endl;
+	cout << "수정행렬" << endl;
 	for (int i = 0; i < positive.size(); i++) {
 		for (int j = 0; j < positive[i].size(); j++) {
 			cout << positive[i][j] << "\t";
