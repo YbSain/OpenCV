@@ -25,7 +25,7 @@ __push_back__ 을 사용 할 경우 입력받은 값대로 __vector__ 내부에 
 
 입력받는 값은 __int__ 값인데, __score__ 는 __vector__ 객체를 가져야 하기 때문에
 
-   vector<int> tmp
+    vector<int> tmp
 
 를 만들어서 int값을 받는 1차원 행렬을 활용해서 __score__ 의 2차원 행렬에 값을 넣었다.
 
