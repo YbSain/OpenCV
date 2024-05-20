@@ -1,5 +1,6 @@
 # 실습과제 1
 
+![image](https://github.com/YbSain/OpenCV/assets/108385276/874077c8-6917-448f-a7ac-48d032d269cc)
 
 ## 문제 풀이
 
