@@ -11,6 +11,8 @@
 
 문제에서 주어진 3x3행렬을 2차원 행렬 __a__ 로 초기화하고 수정한 뒤 저장할 2차원 행렬인 __positive__ 를 만들어 두었다.
 
+### 양수, 음수를 확인하기 및 positive 객체에 초기화
+
     for (int i = 0; i < a.size(); i++) {
 	    vector<int> tmp;
 	    for (int j = 0; j < a[i].size(); j++) {
@@ -28,6 +30,8 @@
 __positive__ 는 __vector__ 객체를 입력받아야 한다.   
 따라서 위의 반복문에서 __vector<int> tmp__ 를 하나 만들어 __a[i][j]__ 의 값을 __0__ 과 __255__ 로 바꾼 뒤, __tmp__ 1차원 행렬에 저장한다.   
 작업을 완료 한 뒤, 2차원 행렬인 __positive__ 에 1차원 행렬인 __tmp__ 값을 __push_back__ 해서 초기화한다.
+
+### 초기화 한 positive 행렬 출력
 
     cout << "수정행렬" << endl;
     for (int i = 0; i < positive.size(); i++) {
