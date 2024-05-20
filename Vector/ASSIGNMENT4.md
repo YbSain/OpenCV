@@ -27,8 +27,8 @@
 	    positive.push_back(tmp);
     }
 
-__positive__ 는 __vector__ 객체를 입력받아야 한다.   
-따라서 위의 반복문에서 __vector<int> tmp__ 를 하나 만들어 __a[i][j]__ 의 값을 __0__ 과 __255__ 로 바꾼 뒤, __tmp__ 1차원 행렬에 저장한다.   
+__positive__ 는 _vector_ 객체를 입력받아야 한다.   
+따라서 위의 반복문에서 **vector<int> tmp** 를 하나 만들어 __a[i][j]__ 의 값을 __0__ 과 __255__ 로 바꾼 뒤, __tmp__ 1차원 행렬에 저장한다.   
 작업을 완료 한 뒤, 2차원 행렬인 __positive__ 에 1차원 행렬인 __tmp__ 값을 __push_back__ 해서 초기화한다.
 
 ### 초기화 한 positive 행렬 출력
