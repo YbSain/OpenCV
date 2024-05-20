@@ -6,12 +6,12 @@
 
 2x2 짜리인 2차원 배열 2개의 합을 구하는 문제이다.   
 
-    vector<vector<int>> a = { {2, 4},{5, -5} };
+    vector<vector<int>> a = { {2, 4}, {5, -5} };
     vector<vector<int>> b = { {-2, 3}, {0, -5 } };
 
 2차원 배열 2개의 값을 __a__ 와 __b__ 에 초기화 시켰다.
 
-    vector<vector<int>> sum{ {0,0},{0,0} };
+    vector<vector<int>> sum{ {0, 0},{0, 0} };
 
 두 값의 합계를 구해야 하니 0으로 초기화 돼있는 2차원 배열 __sum__ 을 만들어 두었음.
 
