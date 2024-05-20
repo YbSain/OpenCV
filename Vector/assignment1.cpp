@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void)
 {
-	//½Ç½À°úÁ¦1
+	//ì‹¤ìŠµê³¼ì œ1
 	vector<vector<int>> a = { {2, 4},{5, -5} };
 	vector<vector<int>> b = { {-2, 3}, {0, -5 } };
 	vector<vector<int>> sum{ {0,0},{0,0} };
@@ -14,7 +14,7 @@ int main(void)
 			sum[i][j] = (a[i][j] + b[i][j]);
 		}
 	}
-	cout << "µÎ 2Â÷¿ø¹è¿­ÀÇ ÇÕ: " << endl;
+	cout << "ë‘ 2ì°¨ì›ë°°ì—´ì˜ í•©: " << endl;
 	for (int i = 0; i < sum.size(); i++) {
 		for (int j = 0; j < sum[i].size(); j++) {
 			cout << sum[i][j] <<"\t";;
