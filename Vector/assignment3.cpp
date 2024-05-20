@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void)
 {
-	//╫г╫ю╟За╕3
+	//б╫ц┤б╫ц─б╟ц╨ц│б╕3
 	vector<vector<int>> a = { {-5, 2, 35}, {-20, 5, 100}, {-75, 5, -25} };
 	vector<int> b;
 	int max = 0;
