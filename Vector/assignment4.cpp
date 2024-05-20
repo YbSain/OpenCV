@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void)
 {
-	//½Ç½À°úÁ¦4
+	//assignment 4
 	vector<vector<int>> a = { {-5, 2, 35}, {-20, 5, 100}, {-75, 5, -25} };
 	vector<vector<int>> positive;
 
@@ -22,7 +22,7 @@ int main(void)
 		}
 		positive.push_back(tmp);
 	}
-	cout << "¼öÁ¤Çà·Ä" << endl;
+	cout << "Â¼Ã¶ÃÂ¤Ã‡Ã Â·Ã„" << endl;
 	for (int i = 0; i < positive.size(); i++) {
 		for (int j = 0; j < positive[i].size(); j++) {
 			cout << positive[i][j] << "\t";
