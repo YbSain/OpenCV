@@ -1,6 +1,7 @@
 # 실습과제 2번
 
-![image](https://github.com/YbSain/OpenCV/assets/108385276/a317414c-1c3f-4ea1-a5c8-122bcd12cb49)
+![image](https://github.com/YbSain/OpenCV/assets/108385276/31c296a2-86c7-4e1b-8bef-58e9e30b9f2b)
+
 
 ## 문제 풀이
 __vector__ 로 2x2 배열을 입력받아 3명의 학생의 3과목 성적을 받아야 하는 문제이다.
@@ -66,3 +67,8 @@ if를 통하여 max값과 비교를 해 그 중 큰 값이 나온 __avgvec[i]__ 
     cout << "최우수 학생은 " << count + 1 << "번째 학생이고 평균점수는 " << max << "점이다.";
 
 모든 작업을 완료 한 뒤 마지막으로 __count+1__ (학생 값은 0부터 시작했기 때문에 +1을 해줬다.) 과 __max__ 값을 출력했다.
+
+
+## 결과
+
+![image](https://github.com/YbSain/OpenCV/assets/108385276/a317414c-1c3f-4ea1-a5c8-122bcd12cb49)
