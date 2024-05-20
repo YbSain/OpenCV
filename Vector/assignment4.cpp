@@ -22,7 +22,7 @@ int main(void)
 		}
 		positive.push_back(tmp);
 	}
-	cout << "¼öÁ¤Çà·Ä" << endl;
+	cout << "Positive Vector" << endl;
 	for (int i = 0; i < positive.size(); i++) {
 		for (int j = 0; j < positive[i].size(); j++) {
 			cout << positive[i][j] << "\t";
