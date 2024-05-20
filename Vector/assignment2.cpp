@@ -5,13 +5,13 @@ using namespace std;
 
 int main(void)
 {
-	//½Ç½À°úÁ¦2
+	//ì‹¤ìŠµê³¼ì œ2
 	vector<vector<int>> score;
 	int tot, max, avg, count = 0;
 	vector<int> avgvec;
 
 	for (int i = 0; i < 3; i++) {
-		cout << i + 1 << "¹øÂ° ÇÐ»ýÀÇ ±¹¾î, ¿µ¾î, ¼öÇÐ ¼ºÀûÀ» ÀÔ·Â: ";
+		cout << i + 1 << "ë²ˆì§¸ í•™ìƒì˜ êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì„±ì ì„ ìž…ë ¥: ";
 		vector<int> tmp;
 		for (int j = 0; j < 3; j++) {
 			int a;
@@ -36,7 +36,7 @@ int main(void)
 			count = i;
 		}
 	}
-	cout << "ÃÖ¿ì¼ö ÇÐ»ýÀº " << count + 1 << "¹øÂ° ÇÐ»ýÀÌ°í Æò±ÕÁ¡¼ö´Â " << max << "Á¡ÀÌ´Ù.";
+	cout << "ìµœìš°ìˆ˜ í•™ìƒì€ " << count + 1 << "ë²ˆì§¸ í•™ìƒì´ê³  í‰ê· ì ìˆ˜ëŠ” " << max << "ì ì´ë‹¤.";
 
 
 	return 0;
