@@ -1,6 +1,5 @@
 # 실습과제 1
 
-![image](https://github.com/YbSain/OpenCV/assets/108385276/8b365474-6774-4510-b000-bcb4eb18ce09)
 
 ## 문제 풀이
 
@@ -38,3 +37,6 @@ a[i][j] 와 b[i][j]의 합을 sum[i][j]에 초기화 시켰다.
 
 합계의 출력은 __sum[i][j]__ 가 나올 때 마다 그 값을 출력하고 __j__ 값 마다 __\t__ 으로 칸을 띄우고   
 [i]값이 바뀔 때 마다 __endl__ 로 줄을 넘겨 2차원 행렬의 모습을 띄게 출력했다.
+
+
+![image](https://github.com/YbSain/OpenCV/assets/108385276/8b365474-6774-4510-b000-bcb4eb18ce09)
