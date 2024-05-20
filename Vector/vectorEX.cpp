@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void)
 {
-	//vector Å¬·¡½º //(°´Ã¼ÀÇ ÀÔÃâ·Â)
+	//vector í´ë˜ìŠ¤ //(ê°ì²´ì˜ ì…ì¶œë ¥)
 	vector<int> score;
 	int a;
 	cout << score.size() << endl; // 0
@@ -16,7 +16,7 @@ int main(void)
 	}
 	for (int i = 0; i < score.size(); i++)
 		cout << score.at(i) << endl;
-	 //°¡´ÉÇÏ¸é À§¿¡ ¹æ½ÄÀ¸·Î
+	 //ê°€ëŠ¥í•˜ë©´ ìœ„ì— ë°©ì‹ìœ¼ë¡œ
 	for (int i = 0; i < score.size(); i++)
 		cout << score[i] << endl;
 
