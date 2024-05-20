@@ -10,7 +10,7 @@ int main(void)
 	int tot;
 	double avg;
 
-	cout << "³× °ú¸ñÀÇ Á¡¼ö ÀÔ·Â : ";
+	cout << "ë„¤ ê³¼ëª©ì˜ ì ìˆ˜ ìž…ë ¥ : ";
 	for (int i = 0; i < 3; i++) {
 		vector<int> tmp;
 		int a;
@@ -28,7 +28,7 @@ int main(void)
 			tot += score[i][j];
 		}
 		avg = tot / 4.0;
-		cout << "ÃÑÁ¡:" << tot << "\t" << "Æò±Õ:" << avg << endl;
+		cout << "ì´ì :" << tot << "\t" << "í‰ê· :" << avg << endl;
 	}
 
 
