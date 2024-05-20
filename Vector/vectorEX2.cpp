@@ -20,11 +20,11 @@ int main(void)
 	}
 	for (int i = 0; i < score.size(); i++)
 	{
-		for (int j = 0; j < score[i].size(); j++)	////ÇÑ iÇà ¿¡¼­ÀÇ j°¡ ³ª ³ª¿Ã‹š±îÁö \t ¹Ýº¹
+		for (int j = 0; j < score[i].size(); j++)	////Ã‡Ã‘ iÃ‡Ã  Â¿Â¡Â¼Â­Ã€Ã‡ jÂ°Â¡ Â³Âª Â³ÂªÂ¿Ãƒâ€¹Å¡Â±Ã®ÃÃ¶ \t Â¹ÃÂºÂ¹
 			cout << score[i][j] << '\t';
 		cout << endl;
 	}
-	// ¸â¹öÇÔ¼öÀÌ¿ë
+	// Â¸Ã¢Â¹Ã¶Ã‡Ã”Â¼Ã¶Ã€ÃŒÂ¿Ã«
 	for (int i = 0; i < score.size(); i++)
 	{
 		for (int j = 0; j < score[i].size(); j++)
