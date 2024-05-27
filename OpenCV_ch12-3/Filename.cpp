@@ -33,12 +33,12 @@ int main(void)
 	cvtColor(bin, dst, COLOR_GRAY2BGR);
 	vector<vector<Point>> contours;
 	findContours(bin, contours, RETR_EXTERNAL, CHAIN_APPROX_NONE);
-	for (vector<Point> pts : contours) { // ÇÏ³ªÀÇ ¿Ü°û¼± ÃßÃâ
+	for (vector<Point> pts : contours) { // í•˜ë‚˜ì˜ ì™¸ê³½ì„  ì¶”ì¶œ
 		if (contourArea(pts) < 400) continue;
 		vector<Point> approx;
 		approxPolyDP(pts, approx, arcLength(pts, true) * 0.02, true);
-		// ¿Ü°û¼± ±Ù»çÈ­
-		int vtc = (int)approx.size(); // ±Ù»çÈ­µÈ Á¡ÀÇ °¹¼ö
+		// ì™¸ê³½ì„  ê·¼ì‚¬í™”
+		int vtc = (int)approx.size(); // ê·¼ì‚¬í™”ëœ ì ì˜ ê°¯ìˆ˜
 
 		if (vtc > 4) 
 		{
