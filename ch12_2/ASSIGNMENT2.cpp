@@ -21,7 +21,6 @@ int main(void
 
 	cout << "외곽선의 갯수:" << contours.size() << endl;
 	for (int i = 0; i < contours.size(); i++){
-		vector<Point> tmp;
 		cout << i << "번째 외곽선의 점의 좌표: ";
 		for (int j = 0; j < contours[i].size(); j++) {
 			cout << contours[i][j];
