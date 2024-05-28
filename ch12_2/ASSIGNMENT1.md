@@ -15,15 +15,15 @@
 외곽선을 검출하기 위해서 주어진 영상 __src__ 를 이진화 함
 이진화할 시에 도형들이 검정색, 배경이 흰색이라 **_INV**를 붙혀 배경을 제외한 도형에만 외곽선을 검출해냄
 
-   Mat tmp;
-   cvtColor(src, tmp, COLOR_BGR2GRAY);
-   threshold(tmp, tmp, 0, 255, THRESH_BINARY_INV | THRESH_OTSU);
+    Mat tmp;
+    cvtColor(src, tmp, COLOR_BGR2GRAY);
+    threshold(tmp, tmp, 0, 255, THRESH_BINARY_INV | THRESH_OTSU);
 
 ### 외곽선 검출
 
 외곽선 검출을 위해 __findContours__ 를 사용한다
 
-   findContours(tmp, contours, RETR_LIST, CHAIN_APPROX_NONE);
+    findContours(tmp, contours, RETR_LIST, CHAIN_APPROX_NONE);
 
 ### 검출결과를 원본영상에 랜덤색상으로 덧칠하기
 
