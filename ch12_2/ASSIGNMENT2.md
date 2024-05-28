@@ -19,8 +19,8 @@ Mat객체에 저장된 영상의 모든 외곽선을 찾고 갯수와 좌표를 
 
 외곽선을 검출해내기 위해선 __vector<vector<Point>>__ 와 __findContours__ 가 필요하다
 
-    	vector<vector<Point>> contours;
-    	findContours(src, contours, RETR_LIST, CHAIN_APPROX_NONE);
+     vector<vector<Point>> contours;
+     findContours(src, contours, RETR_LIST, CHAIN_APPROX_NONE);
 
 으로 __src__ 의 외곽선을 구함
 
