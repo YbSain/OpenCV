@@ -10,31 +10,31 @@ int main() {
 
     Mat labels, stats, centroids;
     int c = connectedComponentsWithStats(src, labels, stats, centroids);
-    int* cf = stats.ptr<int>(1);        //Æ÷ÀÎÅÍ
-    int* cs = stats.ptr<int>(2);        //statsÀÇ 1¹ø°´Ã¼¿Í 2¹ø°´Ã¼ÀÇ ÁÖ¼Ò
+    int* cf = stats.ptr<int>(1);        //í¬ì¸í„°
+    int* cs = stats.ptr<int>(2);        //statsì˜ 1ë²ˆê°ì²´ì™€ 2ë²ˆê°ì²´ì˜ ì£¼ì†Œ
 
-    Rect c1(cf[0] - 1, cf[1] - 1, cf[2] + 3, cf[3] + 3);    //+3Àº ¹Ù¿îµù ¹Ú½º¿¡ ¿©À¯¸¦ ÁÖ±â À§ÇÔ
+    Rect c1(cf[0] - 1, cf[1] - 1, cf[2] + 3, cf[3] + 3);    //+3ì€ ë°”ìš´ë”© ë°•ìŠ¤ì— ì—¬ìœ ë¥¼ ì£¼ê¸° ìœ„í•¨
     Rect c2(cs[0] - 1, cs[1] - 1, cs[2] + 3, cs[3] + 3);
-    //À§¿¡´Â °´Ã¼ÀÇ rect¸¦ ±¸Çß°í °¢ °´Ã¼ÀÇ ¿ÞÂÊ ¿À¸¥ÂÊ °ªÀ» ºñ±³ÇØ¼­ °ø°£Â÷ÀÌ¸¦ Ã£¾Æ¾ßÇÑ´Ù
+    //ìœ„ì—ëŠ” ê°ì²´ì˜ rectë¥¼ êµ¬í–ˆê³  ê° ê°ì²´ì˜ ì™¼ìª½ ì˜¤ë¥¸ìª½ ê°’ì„ ë¹„êµí•´ì„œ ê³µê°„ì°¨ì´ë¥¼ ì°¾ì•„ì•¼í•œë‹¤
 
     Rect c1r(cf[0] + cf[2] / 2 - 1, cf[1] - 1, cf[2] / 2 + 3, cf[3] + 3);
-    // ¿ÞÂÊ °ªÀ» ¾²±âÀ§ÇØ ÁÂÇ¥ °è»êÀ» À§ÇØ xÁÂÇ¥ ½ÃÀÛÁ¡°ú ³¡Á¡ = ±æÀÌ¸¦ ´õÇØ 2·Î ³ª´² Áß¾Ó°ªÀ» °è»êÇÔ
-    // yÁÂÇ¥´Â º¯È­°¡ ¾øÀ½
-    // 3¹øÂ°Ä­Àº 1¹øÂ° Ä­°ú ´Ù¸£°Ô widthÁï ±æÀÌ¸¦ ±¸ÇÏ¸éµÅ¼­ ±æÀÌ°ªÀÇ /2¸¸ Ã³¸®ÇÔ
+    // ì™¼ìª½ ê°’ì„ ì“°ê¸°ìœ„í•´ ì¢Œí‘œ ê³„ì‚°ì„ ìœ„í•´ xì¢Œí‘œ ì‹œìž‘ì ê³¼ ëì  = ê¸¸ì´ë¥¼ ë”í•´ 2ë¡œ ë‚˜ëˆ  ì¤‘ì•™ê°’ì„ ê³„ì‚°í•¨
+    // yì¢Œí‘œëŠ” ë³€í™”ê°€ ì—†ìŒ
+    // 3ë²ˆì§¸ì¹¸ì€ 1ë²ˆì§¸ ì¹¸ê³¼ ë‹¤ë¥´ê²Œ widthì¦‰ ê¸¸ì´ë¥¼ êµ¬í•˜ë©´ë¼ì„œ ê¸¸ì´ê°’ì˜ /2ë§Œ ì²˜ë¦¬í•¨
     Rect c1l(cf[0] - 1, cf[2] - 1, cf[2] / 2 + 3, cf[3] + 3);
-    //À§¿Í ´Ù¸£°Ô ¿ÞÂÊ½ÃÀÛÀº x°ªÀÇ À§Ä¡ º¯È­°¡ ¾øÀ¸´Ï ±æÀÌ¸¸ ¹ÝÀý·Î °è»êÇØÁà¼­ ±¸ÇÑ´Ù
+    //ìœ„ì™€ ë‹¤ë¥´ê²Œ ì™¼ìª½ì‹œìž‘ì€ xê°’ì˜ ìœ„ì¹˜ ë³€í™”ê°€ ì—†ìœ¼ë‹ˆ ê¸¸ì´ë§Œ ë°˜ì ˆë¡œ ê³„ì‚°í•´ì¤˜ì„œ êµ¬í•œë‹¤
 
     Rect c2r(cs[0] + cs[2] / 2 - 1, cs[1] - 1, cs[2] / 2, cs[3]);
     Rect c2l(cs[0] - 1, cs[2] - 1, cs[2] / 2 + 3, cs[3] + 3);
-    //À§¿Í ÁÂÇ¥¸¸ Â÷ÀÌ ³ª±â ¶§¹®¿¡ °è»ê½ÄÀº µ¿ÀÏÇÏ°Ô »ç¿ëÇÒ¼öÀÖ´Ù.
+    //ìœ„ì™€ ì¢Œí‘œë§Œ ì°¨ì´ ë‚˜ê¸° ë•Œë¬¸ì— ê³„ì‚°ì‹ì€ ë™ì¼í•˜ê²Œ ì‚¬ìš©í• ìˆ˜ìžˆë‹¤.
 
     int c1lc, c1rc, c2lc, c2rc;
     c1lc = connectedComponents(src(c1l), labels);
-    //src(c1l) ÀÔ·Â¿µ»óÀÇ c1left ºÎºÐÀÇ ·¹ÀÌºí¸Ê °ªÀÌ´Ù
+    //src(c1l) ìž…ë ¥ì˜ìƒì˜ c1left ë¶€ë¶„ì˜ ë ˆì´ë¸”ë§µ ê°’ì´ë‹¤
     c1rc = connectedComponents(src(c1r), labels);
     c2lc = connectedComponents(src(c2l), labels);
     c2rc = connectedComponents(src(c2r), labels);
-    //¿Ö ·¹ÀÌºí °ª 3ÀÌ ±âÁØÀÎ°¡ ?
+    //ì™œ ë ˆì´ë¸” ê°’ 3ì´ ê¸°ì¤€ì¸ê°€ ?
     if (c1lc == 3) {    
         vector<vector<Point>> left;
         findContours(src(c1), left, RETR_LIST, CHAIN_APPROX_NONE);
