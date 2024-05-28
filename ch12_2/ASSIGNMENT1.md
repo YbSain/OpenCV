@@ -2,13 +2,16 @@
 
 ![스크린샷 2024-05-28 112839](https://github.com/YbSain/OpenCV/assets/108385276/749eadcf-ad3c-4aa1-b0e6-4c0411e2a7f8)
 
-## 실습과제1
+# 실습과제1
 
 ![image](https://github.com/YbSain/OpenCV/assets/108385276/3527c8fd-78fe-4faf-aefc-6ab694416562)
 
-### 문제 풀이
+## 문제 풀이
 
 원본이미지 __src__ 의 외곽선들을 검출해내 그 위를 랜덤의 색깔로 덧칠하는 방식이다
+1) 이미지 이진화
+2) 외곽선 검출
+3) 랜덤색상으로 덧칠하기
 
 ### 이미지 이진화
 
