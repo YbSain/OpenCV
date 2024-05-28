@@ -62,28 +62,28 @@ _+3을 해주는 이유는 바운딩 박스에 여유를 두기 위함_
      c2lc = connectedComponents(src(c2l), labels);
      c2rc = connectedComponents(src(c2r), labels);
 
-          if (c1lc == 3) {    
-              vector<vector<Point>> left;
-              findContours(src(c1), left, RETR_LIST, CHAIN_APPROX_NONE);
-              drawContours(dst(c1), left, 0, Scalar(255, 0, 0), 2);
-              cout << "왼쪽으로 열림" << endl;
-          }
-          if (c1rc == 3) {
-              vector<vector<Point>> right;
-              findContours(src(c1), right, RETR_LIST, CHAIN_APPROX_NONE);
-              drawContours(dst(c1), right, 0, Scalar(0, 0, 255), 2);
-              cout << "오른쪽으로 열림" << endl;
-          }
-          if (c2lc == 3) {
-              vector<vector<Point>> left;
-              findContours(src(c2), left, RETR_LIST, CHAIN_APPROX_NONE);
-              drawContours(dst(c2), left, 0, Scalar(255, 0, 0), 2);
-              cout << "왼쪽으로 열림" << endl;
-          }
-          if (c2rc == 3) {
-              vector<vector<Point>> right;
-              findContours(src(c2), right, RETR_LIST, CHAIN_APPROX_NONE);
-              drawContours(dst(c2), right, 0, Scalar(0, 0, 255), 2);
-              cout << "오른쪽으로 열림" << endl;
-          }
+     if (c1lc == 3) {    
+         vector<vector<Point>> left;
+         findContours(src(c1), left, RETR_LIST, CHAIN_APPROX_NONE);
+         drawContours(dst(c1), left, 0, Scalar(255, 0, 0), 2);
+         cout << "왼쪽으로 열림" << endl;
+     }
+     if (c1rc == 3) {
+         vector<vector<Point>> right;
+         findContours(src(c1), right, RETR_LIST, CHAIN_APPROX_NONE);
+         drawContours(dst(c1), right, 0, Scalar(0, 0, 255), 2);
+         cout << "오른쪽으로 열림" << endl;
+     }
+     if (c2lc == 3) {
+         vector<vector<Point>> left;
+         findContours(src(c2), left, RETR_LIST, CHAIN_APPROX_NONE);
+         drawContours(dst(c2), left, 0, Scalar(255, 0, 0), 2);
+         cout << "왼쪽으로 열림" << endl;
+     }
+     if (c2rc == 3) {
+         vector<vector<Point>> right;
+         findContours(src(c2), right, RETR_LIST, CHAIN_APPROX_NONE);
+         drawContours(dst(c2), right, 0, Scalar(0, 0, 255), 2);
+         cout << "오른쪽으로 열림" << endl;
+     }
                         
