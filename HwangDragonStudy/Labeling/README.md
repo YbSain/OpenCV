@@ -20,7 +20,7 @@
 
 레이블링을 진행하기 위해서는 우선 이진화를 해야한다
 
-   threshold(src, src, 0, 255, THRESH_BINARY_INV | THRESH_OTSU);
+    threshold(src, src, 0, 255, THRESH_BINARY_INV | THRESH_OTSU);
 
 를 통해 이진화를 먼저 진행시켜줌
 
@@ -28,10 +28,10 @@
 
 이진화 된 __src__ 영상에 대한 레이블링이다
 
-   Mat labels, stats, centroids;
-   int c = connectedComponentsWithStats(src, labels, stats, centroids);
-   int* cf = stats.ptr<int>(1);
-   int* cs = stats.ptr<int>(2);
+    Mat labels, stats, centroids;
+    int c = connectedComponentsWithStats(src, labels, stats, centroids);
+    int* cf = stats.ptr<int>(1);
+    int* cs = stats.ptr<int>(2);
 
 위 과정으로 __cf__ 는 __1번 객체__, __cs__ 는 __2번 객체__ 의 주소를 가져와준다
 
@@ -56,33 +56,34 @@ _+3을 해주는 이유는 바운딩 박스에 여유를 두기 위함_
 
 각 __Rect__ 객체를 이진화 한 __src__ 영상내부에서의 레이블링을 수행 한 뒤 조건에 부합한 외곽선에 색을 칠함
 
-  int c1lc, c1rc, c2lc, c2rc;
-  c1lc = connectedComponents(src(c1l), labels);
-  c1rc = connectedComponents(src(c1r), labels);
-  c2lc = connectedComponents(src(c2l), labels);
-  c2rc = connectedComponents(src(c2r), labels);
+     int c1lc, c1rc, c2lc, c2rc;
+     c1lc = connectedComponents(src(c1l), labels);
+     c1rc = connectedComponents(src(c1r), labels);
+     c2lc = connectedComponents(src(c2l), labels);
+     c2rc = connectedComponents(src(c2r), labels);
 
-    if (c1lc == 3) {    
-        vector<vector<Point>> left;
-        findContours(src(c1), left, RETR_LIST, CHAIN_APPROX_NONE);
-        drawContours(dst(c1), left, 0, Scalar(255, 0, 0), 2);
-        cout << "왼쪽으로 열림" << endl;
-    }
-    if (c1rc == 3) {
-        vector<vector<Point>> right;
-        findContours(src(c1), right, RETR_LIST, CHAIN_APPROX_NONE);
-        drawContours(dst(c1), right, 0, Scalar(0, 0, 255), 2);
-        cout << "오른쪽으로 열림" << endl;
-    }
-    if (c2lc == 3) {
-        vector<vector<Point>> left;
-        findContours(src(c2), left, RETR_LIST, CHAIN_APPROX_NONE);
-        drawContours(dst(c2), left, 0, Scalar(255, 0, 0), 2);
-        cout << "왼쪽으로 열림" << endl;
-    }
-    if (c2rc == 3) {
-        vector<vector<Point>> right;
-        findContours(src(c2), right, RETR_LIST, CHAIN_APPROX_NONE);
-        drawContours(dst(c2), right, 0, Scalar(0, 0, 255), 2);
-        cout << "오른쪽으로 열림" << endl;
-    }
+          if (c1lc == 3) {    
+              vector<vector<Point>> left;
+              findContours(src(c1), left, RETR_LIST, CHAIN_APPROX_NONE);
+              drawContours(dst(c1), left, 0, Scalar(255, 0, 0), 2);
+              cout << "왼쪽으로 열림" << endl;
+          }
+          if (c1rc == 3) {
+              vector<vector<Point>> right;
+              findContours(src(c1), right, RETR_LIST, CHAIN_APPROX_NONE);
+              drawContours(dst(c1), right, 0, Scalar(0, 0, 255), 2);
+              cout << "오른쪽으로 열림" << endl;
+          }
+          if (c2lc == 3) {
+              vector<vector<Point>> left;
+              findContours(src(c2), left, RETR_LIST, CHAIN_APPROX_NONE);
+              drawContours(dst(c2), left, 0, Scalar(255, 0, 0), 2);
+              cout << "왼쪽으로 열림" << endl;
+          }
+          if (c2rc == 3) {
+              vector<vector<Point>> right;
+              findContours(src(c2), right, RETR_LIST, CHAIN_APPROX_NONE);
+              drawContours(dst(c2), right, 0, Scalar(0, 0, 255), 2);
+              cout << "오른쪽으로 열림" << endl;
+          }
+                        
