@@ -4,7 +4,6 @@ using namespace std;
 using namespace cv;
 
 Mat src(500, 750, CV_8UC3, Scalar(255, 255, 255));
-
 Point pt0ld;
 void on_mouse(int event, int x, int y, int flags, void*);
 
@@ -75,13 +74,51 @@ int main(void)
 
 void on_mouse(int event, int x, int y, int flags, void*)
 {
+	Rect areas(500, 0, 250, 100);
+	Rect areal(500, 100, 250, 100);
+	Rect areac(500, 200, 250, 100);
+	Rect arear(500, 300, 250, 100);
+	Rect areae(500, 400, 250, 100);
+	Mat savefile;
+	string name;
+	savefile = src(Rect(0, 0, 500, 500));
+
 	switch (event) {		
 	case EVENT_LBUTTONDOWN:
 		pt0ld = Point(x, y);
-		if (pt0ld src(Rect(500, 0, 250, 100))
-		{
+		if (areas.contains(pt0ld)) {						//save
+			cout << "save" << endl;
+			cout << "파일이름 입력(.jpg포함): ";
+			cin >> name;
+			imwrite(name, savefile);
+		}
+		if (areal.contains(pt0ld)) {						//load
+			cout << "load" << endl;
+			cout << "불러올 파일 이름 입력(.jpg포함) : ";
+			cin >> name;
+			savefile = imread(name);
+			if (savefile.empty())
+			{
+				cerr << "Image Loaded Failed!" << endl;
+			}
+			Mat roi = src(Rect(0, 0, 500, 500));
+			savefile.copyTo(roi);
+		}
+		if (areac.contains(pt0ld))
+		{						//clear
+			cout << "clear" << endl;
+			savefile = (500, 500, CV_8UC3, Scalar(255, 255, 255));
+			rectangle(src, Point(0, 0), Point(500, 500), Scalar(0, 0, 0), 2);
+		}
+		if (arear.contains(pt0ld)) {						//run
+			cout << "run" << endl;
 
 		}
+		if (areae.contains(pt0ld)) {						//exit
+			cout << "exit" << endl;
+			exit(1);
+		}
+		break;
 		
 	case EVENT_MOUSEMOVE:
 		if (flags & EVENT_FLAG_LBUTTON) {
@@ -94,4 +131,7 @@ void on_mouse(int event, int x, int y, int flags, void*)
 	case EVENT_RBUTTONDOWN:
 		return;
 	}
+
+	imshow("src", src);
 }
+
