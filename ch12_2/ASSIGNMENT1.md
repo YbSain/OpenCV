@@ -37,5 +37,5 @@
     for(int i = 0; i < contours.size(); i++) {
       Scalar c(rand() & 255, rand() & 255, rand() & 255);
       drawContours(dst, contours, i, c, 2);
-   }
+    }
 
